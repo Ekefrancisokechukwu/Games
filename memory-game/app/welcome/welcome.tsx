@@ -7,9 +7,27 @@ interface IWelcome {
 export function Welcome({ handleGetStarted }: IWelcome) {
   return (
     <main className="grid h-screen place-items-center pt-8 pb-4">
-      <div className="grid place-items-center">
-        <h1 className="text-3xl font-semibold"> Welcome To Memory Game</h1>
+      <div className="grid place-items-center text-white">
+        <motion.h1
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", duration: 0.2, damping: 8 }}
+          className="text-3xl font-semibold"
+        >
+          {" "}
+          Welcome To Memory Game
+        </motion.h1>
         <motion.button
+          initial={{ scale: 0 }}
+          animate={{
+            scale: 1,
+            transition: {
+              delay: 0.4,
+              type: "spring",
+              duration: 0.2,
+              damping: 8,
+            },
+          }}
           onClick={handleGetStarted}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 1 }}
